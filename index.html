@@ -8,28 +8,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="https://grow.grin.co/wp-content/uploads/2016/12/shutterstock_435629701.jpg" alt="Logo" width="150" height="60" class="d-inline-block align-text-top">
                 </a>
-                <div class="d-flex">
-                    <button type="button" class="btn btn-success">Create a new post</button>
+                <div class="d-flex gap-4"> 
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#CreateANewPostModal">Create a new post</button>
+                    <div class="modal fade" id="CreateANewPostModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="CreateANewPostModal">Create a new Post</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                <div class="mb-3">
+                                  <label for="Caption-name" class="col-form-label">Caption:</label>
+                                  <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                                <div class="d-flex grid gap-3 mb-3">
+                                    <button type="button" class="btn btn-light"><i class="fa-solid fa-camera"></i></button>
+                                    <button type="button" class="btn btn-light"><i class="fa-solid fa-location-dot"></i></button>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <i class="fa-solid fa-gear"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
-                        <li><a class="dropdown-item" href="#">Privacy and data</a></li>
-                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
-                    </ul>
-                </div>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
           </nav>
 
+          <div class="text-center mt-3">
+            <button type="button" class="btn btn-light me-3 text-secondary" data-bs-toggle="modal" data-bs-target="#PhotoGrid"><i class="fa-solid fa-table-cells"></i></button>
+            <button type="button" class="btn btn-light text-secondary"><i class="fa-solid fa-square"></i></button>
+          </div>
+          <div class="container text-center" id="PhotoGrid">
+            <div class="row">
+              <div class="col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0juz1A3jdEhDznRUjv6ToswXkUEUXZUrt6w&s" alt="">
+              </div>
+              <div class="col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlS6L5XlHtE8v-xabINrnUef955wl33Hi6nw&s" alt="">
+              </div>
+              <div class="col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPp2X3cl12-TeE4UBC4TnR_6wMaZxECD-dw&s" alt="">
+              </div>
+            </div>
+          </div>
           
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
